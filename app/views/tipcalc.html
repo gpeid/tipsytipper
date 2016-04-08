@@ -1,26 +1,36 @@
-Enter your bill: <br>
-<input ng-model="vm.bill" type="text">
-
+<div class="row">
+  <div class="col col-xs-12">
+    Enter your bill: <br>
+    <input ng-model="vm.bill" type="text">
+  </div>
+</div>
 <br>
 <br>
 
 You will be tipping: <br>
-{{vm.getGratuity(vm.bill, vm.gratuity) | currency}}
-
-
-<br>
-
-<label ng-click="vm.gratuity = 0.16" class="btn" for="">0.16</label> <br>
-<label ng-click="vm.gratuity = 0.17" class="btn" for="">0.17</label> <br>
-<label ng-click="vm.gratuity = 0.18" class="btn" for="">0.18</label> <br>
-<label ng-click="vm.gratuity = 0.19" class="btn" for="">0.19</label> <br>
-<label ng-click="vm.gratuity = 0.20" class="btn" for="">0.20</label> <br>
-<label ng-click="vm.gratuity = 0.21" class="btn" for="">0.21</label> <br>
-<label ng-click="vm.gratuity = 0.22" class="btn" for="">0.22</label> <br>
-<label ng-click="vm.gratuity = 0.23" class="btn" for="">0.23</label> <br>
-<label ng-click="vm.gratuity = 0.24" class="btn" for="">0.24</label> <br>
-<label ng-click="vm.gratuity = 0.25" class="btn" for="">0.25</label> <br>
+<h2>{{vm.getGratuity(vm.bill, vm.gratuity) | currency}}</h2>
 
 <br>
 
-{{vm.getSubtotal(vm.bill, vm.getGratuity(vm.bill, vm.gratuity)) || 0 | currency}}
+<div class="row">
+  <div class="col col-xs-12">
+    <div class="flex-container">
+      <div ng-click="vm.gratuity = 0.17" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.17}" for="">17%</div>
+      <div ng-click="vm.gratuity = 0.18" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.18}" for="">18%</div>
+      <div ng-click="vm.gratuity = 0.19" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.19}" for="">19%</div>
+    </div>
+    <div class="flex-container">
+      <div ng-click="vm.gratuity = 0.20" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.20}" for="">20%</div>
+      <div ng-click="vm.gratuity = 0.21" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.21}" for="">21%</div>
+      <div ng-click="vm.gratuity = 0.22" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.22}" for="">22%</div>
+    </div>
+    <div class="flex-container">
+      <div ng-click="vm.gratuity = 0.23" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.23}" for="">23%</div>
+      <div ng-click="vm.gratuity = 0.24" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.24}" for="">24%</div>
+      <div ng-click="vm.gratuity = 0.25" class="btn btn-default flex-items" ng-class="{'active': vm.gratuity == 0.25}" for="">25%</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<span class="pull-right"><strong>Subtotal: </strong> <u>{{vm.getSubtotal(vm.bill, vm.getGratuity(vm.bill, vm.gratuity)) || 0 | currency}}</u></span>

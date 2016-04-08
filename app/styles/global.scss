@@ -2,3 +2,14 @@
   background-color: transparent;
   border-color: transparent;
 }
+
+.flex-container{
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-items{
+  flex-grow: 1;
+  height: 100px; /* Or whatever */
+  margin: auto;  /* Magic! */
+}
